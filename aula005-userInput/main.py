@@ -1,18 +1,6 @@
 """
-            VALIDATE USER INPUTS
-    We want to avoid or handle values:
-        |---> which doesn't make sense
-        |---> that could crash our program
-        |---> could even be a security risk
-
-    by conditionals
-        EQUALS:                     a == b
-        NOT EQUALS:                 a != b
-        LESS THAN:                  a < b
-        GREATER THAN:               a > b
-        LESS THAN OR EQUAL TO:      a <= b
-        GREATER THAN OR EQUAL TO:   a >= b
-
+    ERROR HANDLING
+        TRY & EXCEPT
 """
 
 
@@ -38,8 +26,10 @@ def days_to_units_enhanced(n_days):
 
 
 def days_to_units_user_check(n_days):
-    if n_days >= 0:
+    if n_days > 0:
         return f"In {n_days} days we have {n_days * minutes_in_x_day} {name_of_unit}"
+    elif n_days == 0:
+        return "You entered a 0. Please enter with a positive value!"
     else:
         return "Please, enter with a positive value"
 #------------------------------------------------------------------------------------------------------------
